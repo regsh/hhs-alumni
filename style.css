@@ -353,6 +353,41 @@ a { color: inherit; }
 }
 .faq-answer p + p { margin-top: .6rem; }
 
+/* ── Agenda embed (expandable form inside a row) ─────────── */
+.agenda-embed {
+  grid-column: 1 / -1;
+  border-top: 1px solid #e8e8e8;
+}
+.agenda-embed summary {
+  list-style: none;
+  cursor: pointer;
+  padding: .6rem 1.25rem;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--garnet);
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  user-select: none;
+  background: var(--garnet-light);
+}
+.agenda-embed summary::-webkit-details-marker { display: none; }
+.agenda-embed summary::before {
+  content: '▸';
+  font-size: .75rem;
+  transition: transform .2s;
+}
+.agenda-embed[open] summary::before { transform: rotate(90deg); }
+.agenda-embed-body {
+  padding: 1.25rem;
+  background: var(--white);
+}
+.agenda-embed-body iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
+
 /* ── Stay in Touch ────────────────────────────────────────── */
 .stay-intro {
   text-align: center;
